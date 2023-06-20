@@ -5,9 +5,11 @@ const lengthTextInput = textInput.getAttribute('data-length', 6);
 const checklength = event => {
   const CurrentValue = event.currentTarget.value;
   if (Number(lengthTextInput) === Number(CurrentValue.length)) {
+    textInput.classList.remove('invalid');
     textInput.classList.add('valid');
     console.log('Valid');
   } else {
+    textInput.classList.remove('valid');
     textInput.classList.add('invalid');
     console.log('Invalid');
   }
