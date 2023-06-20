@@ -13,7 +13,13 @@ function handleSubmit(event) {
     } else if (email.value === '' && password.value === '') {
       alert('Пожалуйста заполните все поля');
     } else {
-      console.log(`Email: ${email.value}, Password: ${password.value}`);
+    const user = [
+      ['Email', `${email.value}`],
+      ['Password', `${password.value}`]];
+      
+      const obj = Object.fromEntries(user);
+
+      console.log(obj);
       event.currentTarget.reset();
     }
 }
